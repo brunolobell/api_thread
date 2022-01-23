@@ -24,10 +24,15 @@ class Handler(BaseHTTPRequestHandler):
             
             params['access_key'] = marketAccessKey
             # Connect to marketstack api and get response like a JSON
-            marketResult = req.get("http://api.marketstack.com/v1/eod", params).json()
+            marketResult = req.get("http://api.marketstack.com/v1/eod", params).json()    
             jsonString = json.dumps(marketResult)
+            if 'error' in marketResult:
+                self.send_response(500)
+                self.wfile.write(jsonString.encode())
+                return
 
             self.send_response(200)
+            self.send_header("Access-Control-Allow-Origin", "*")
             self.end_headers()
             self.wfile.write(jsonString.encode())
         except Exception as e:
