@@ -3,16 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@d3fc/d3fc-discontinuous-scale": "^4.0.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.25.0",
+    "d3-scale": "^4.0.2",
+    "materialize-css": "^1.0.0",
+    "moment": "^2.29.1",
+    "npm-watch": "^0.11.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-materialize": "^3.10.0",
     "react-scripts": "5.0.0",
+    "recharts": "^2.1.8",
     "web-vitals": "^2.1.4"
   },
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js,jsx,css"
+    }
+  },
   "scripts": {
-    "start": "react-scripts start",
+    "watch": "npm-watch",
+    "start": "CHOKIDAR_USEPOLLING=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -21,6 +38,14 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/*.{js,jsx}",
+      "!**/*index.js",
+      "!src/serviceWorker.js",
+      "!src/polyfill.js"
     ]
   },
   "browserslist": {

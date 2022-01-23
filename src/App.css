@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+.Row{
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer{
+  width: 100%;
+  bottom: 0;
+}
+
+.input-field{
+  width:100%;
+}
+
+#divMaster {
+  padding-top: 5%;
+}
+
+.footer {
+  background-color: #26a69a;
+}
