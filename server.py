@@ -6,7 +6,7 @@ import json, logging, os, threading, requests as req
 # Environments Variables 
 host = os.getenv('HOST', 'localhost')
 port = os.getenv('PORT', 8080)
-marketAccessKey = os.getenv('MARKET_KEY', 'f4e8c11f8754277706928ea4b53805ee')
+marketAccessKey = os.getenv('MARKET_KEY', 'd02610aad5a5fed063f8c553ac5df977')
 
 # Class to handle http requests
 class Handler(BaseHTTPRequestHandler):

@@ -1,6 +1,9 @@
 {
   "name": "trabalho2",
   "version": "0.1.0",
+  "engines": {
+    "node": "16.13.2"
+  },
   "private": true,
   "dependencies": {
     "@d3fc/d3fc-discontinuous-scale": "^4.0.2",
@@ -9,9 +12,12 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.25.0",
     "d3-scale": "^4.0.2",
+    "express": "^4.17.2",
+    "express-favicon": "^2.0.1",
     "materialize-css": "^1.0.0",
     "moment": "^2.29.1",
     "npm-watch": "^0.11.0",
+    "path": "^0.12.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-materialize": "^3.10.0",
@@ -29,7 +35,7 @@
   },
   "scripts": {
     "watch": "npm-watch",
-    "start": "CHOKIDAR_USEPOLLING=true react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
