@@ -36,6 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
 .Row{
   justify-content: space-between;
   width: 100%;
