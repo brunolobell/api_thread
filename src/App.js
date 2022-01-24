@@ -13,15 +13,15 @@ async function Submit(symbol, initialDate, finalDate, setError, setLoading, setR
   try{
     if (initialDate === '' && finalDate !== ''){
       alert("Data inicial não passada!")
-      var urlReq = `http://localhost:8080?symbols=${symbol}&date_to=${newFinalDate}`;
+      var urlReq = `https://peaceful-bastion-30569.herokuapp.com/?symbols=${symbol}&date_to=${newFinalDate}`;
     } else if (finalDate === '' && initialDate !== '') {
       alert("Data final não passada!")
-      var urlReq = `http://localhost:8080?symbols=${symbol}&date_from=${newInitialDate}`;
+      var urlReq = `https://peaceful-bastion-30569.herokuapp.com/?symbols=${symbol}&date_from=${newInitialDate}`;
     } else if (finalDate !== '' && initialDate !== '') {
-      var urlReq = `http://localhost:8080?symbols=${symbol}&date_from=${newInitialDate}&date_to=${newFinalDate}`;
+      var urlReq = `https://peaceful-bastion-30569.herokuapp.com/?symbols=${symbol}&date_from=${newInitialDate}&date_to=${newFinalDate}`;
     } else {
       alert("Data inicial e final não foram passadas!");
-      var urlReq = `http://localhost:8080?symbols=${symbol}`;
+      var urlReq = `https://peaceful-bastion-30569.herokuapp.com/?symbols=${symbol}`;
     }
     const resp = await axios.get(urlReq);
     setResp(resp.data);
@@ -31,7 +31,7 @@ async function Submit(symbol, initialDate, finalDate, setError, setLoading, setR
     setError(e);
     setLoading(false);    
   }
-}
+} 
 
 function App() {
   const [ error, setError ] = useState(null);
